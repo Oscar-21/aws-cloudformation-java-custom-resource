@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>software.amazon.lambda.examples</groupId>
-  <artifactId>powertools-examples-cloudformation</artifactId>
-  <name>AWS Lambda Powertools for Java library Examples - CloudFormation</name>
-  <version>1.16.1</version>
+  <groupId>app.nymbl</groupId>
+  <artifactId>customresource-test</artifactId>
+  <name>Custom Cloudformation Resource using AWS Lambda Powertools for Java library</name>
+  <version>0.0.1</version>
   <build>
     <plugins>
       <plugin>
@@ -125,6 +125,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <aws.sdk.version>2.20.114</aws.sdk.version>
     <lambda.core.version>1.2.2</lambda.core.version>
+    <powertools.version>1.16.1</powertools.version>
     <lambda.events.version>3.11.2</lambda.events.version>
     <maven.compiler.target>1.8</maven.compiler.target>
     <log4j.version>2.20.0</log4j.version>

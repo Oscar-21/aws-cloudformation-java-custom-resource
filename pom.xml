@@ -2,12 +2,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>software.amazon.lambda.examples</groupId>
-    <version>1.16.1</version>
-    <artifactId>powertools-examples-cloudformation</artifactId>
+    <groupId>app.nymbl</groupId>
+    <version>0.0.1</version>
+    <artifactId>customresource-test</artifactId>
     <packaging>jar</packaging>
 
-    <name>AWS Lambda Powertools for Java library Examples - CloudFormation</name>
+    <name>Custom Cloudformation Resource using AWS Lambda Powertools for Java library</name>
 
     <properties>
         <log4j.version>2.20.0</log4j.version>
@@ -17,6 +17,7 @@
         <lambda.core.version>1.2.2</lambda.core.version>
         <lambda.events.version>3.11.2</lambda.events.version>
         <aws.sdk.version>2.20.114</aws.sdk.version>
+        <powertools.version>1.16.1</powertools.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -44,12 +45,12 @@
         <dependency>
             <groupId>software.amazon.lambda</groupId>
             <artifactId>powertools-cloudformation</artifactId>
-            <version>${project.version}</version>
+            <version>${powertools.version}</version>
         </dependency>
         <dependency>
             <groupId>software.amazon.lambda</groupId>
             <artifactId>powertools-logging</artifactId>
-            <version>${project.version}</version>
+            <version>${powertools.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
