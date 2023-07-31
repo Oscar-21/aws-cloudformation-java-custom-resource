@@ -60,7 +60,7 @@ public class PowertoolsExamplesCloudformationCdkStack extends Stack {
                 .runtime(Runtime.JAVA_11)
                 .code(Code.fromAsset("../../", AssetOptions.builder().bundling(bundlingOptions)
                         .build()))
-                .handler("helloworld.App::handleRequest")
+                .handler("app.nymbl.customresource.App::handleRequest")
                 .memorySize(512)
                 .timeout(Duration.seconds(20))
                 .environment(Collections

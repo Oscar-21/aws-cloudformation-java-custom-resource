@@ -2,7 +2,6 @@ AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
   powertools-examples-cloudformation
-
   Sample SAM Template for powertools-examples-cloudformation
 
 Globals:
@@ -10,35 +9,31 @@ Globals:
     Timeout: 20
 
 Parameters:
-  BucketNameParam:
+  pApplicationName:
     Type: String
 
 Resources:
   HelloWorldCustomResource:
-    Type: AWS::CloudFormation::CustomResource
+    Type: 'AWS::CloudFormation::CustomResource'
     Properties:
-      ServiceToken: !GetAtt HelloWorldFunction.Arn
-      BucketName: !Ref BucketNameParam
+      ServiceToken: !GetAtt 'HelloWorldFunction.Arn'
+      ApplicationName: !Ref 'pApplicationName'
 
   HelloWorldFunction:
-    Type: AWS::Serverless::Function
+    Type: 'AWS::Serverless::Function'
     Properties:
       CodeUri: ../../
-      Handler: helloworld.App::handleRequest
+      Handler: app.nymbl.customresource.App::handleRequest
       Runtime: java11
       Architectures:
         - x86_64
       MemorySize: 512
       Policies:
         - Statement:
-            - Sid: bucketaccess1
+            - Sid: elasticbeanstalkcustomaccess1
               Effect: Allow
               Action:
-                - s3:GetLifecycleConfiguration
-                - s3:PutLifecycleConfiguration
-                - s3:CreateBucket
-                - s3:ListBucket
-                - s3:DeleteBucket
+                - elasticbeanstalk:DescribeApplications
               Resource: '*'
       Environment:
         Variables:
@@ -48,3 +43,4 @@ Outputs:
   HelloWorldFunction:
     Description: "Hello World Lambda Function ARN"
     Value: !GetAtt HelloWorldFunction.Arn
+
