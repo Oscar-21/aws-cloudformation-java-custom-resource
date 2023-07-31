@@ -63,7 +63,7 @@
         </dependency>
         <dependency>
             <groupId>software.amazon.awssdk</groupId>
-            <artifactId>elastibeanstalk</artifactId>
+            <artifactId>elasticbeanstalk</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>software.amazon.awssdk</groupId>
